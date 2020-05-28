@@ -5,10 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fancy-weather</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
     <h1>fancy-weather</h1>
+    <div class="wrapper">
+        <div class="block_control">
+            <div class="container_control">
+                <div class="button_refresh">
+                    <img class="img_refresh" src="./assets/img/controls_btn.png" alt="img">
+                    <img class="img_reverse" src="./assets/img/reverse.svg" alt="img">
+                </div>
+                <div class="button_language">
+                    <select class="select_lang">
+                        <option>EN</option>
+                        <option>RU</option>
+                        <option>BE</option>
+                      </select>
+
+                </div>
+                <div class="button_temperature">
+                    <div class="button_one"> <span>°F</span></div>
+                    <div class="button_two"><span>°C</span></div>
+                </div>
+            </div>
+            <div class="container_search">
+                <form action="#" class="search_form">
+                    <input class="search_input" id="input_search" type="text" maxlength="26" placeholder="Search city">
+                    <img class="img_micro" src="./assets/img/micro.png" alt="img">
+                    <button class="button_search" id="button_search">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <main class="block_main">
+            <div class="container_main_info">
+                <div class="container_info_one"></div>
+                <div class="container_info_two"></div>
+                <div class="container_info_tree"></div>
+            </div>
+            <div class="container_map">
+                <div class="map" id="map"></div>
+                <div class="map_info"></div>
+            </div>
+        </main>
+
+    </div>
+
+
 </body>
 
 </html>

@@ -1,9 +1,34 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
-@import "utils/reset";
+@import "modules/block_control/block_control";
+@import "modules/block_main/block_main";
+@import "modules/font";
+h1 {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
 
+.wrapper {
+    background-color: brown;
+    width: 87%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
 
-// Modules:
-// example: @import "modules/my-module.scss";
+body {
+    font-family: 'Exo 2';
+    background-image: url('../img/bg_img/bg_1.jpg');
+    background-size: cover;
+    animation: clr 10s infinite;
+    align-content: stretch;
+}
+
+@keyframes clr {
+    0% {
+        background-image: url('../img/bg_img/bg_3.jpg');
+    }
+    100% {
+        background-image: url('../img/bg_img/bg_4.jpg');
+    }
+}
