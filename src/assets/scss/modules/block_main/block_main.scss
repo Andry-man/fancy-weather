@@ -38,17 +38,22 @@
     background-color: #6e677b;
     height: auto;
     width: 28%;
+    .controls {
+        position: relative;
+        margin: -22% auto 17%;
+    }
     .map {
         width: 85%;
         height: 42vh;
         border-radius: 10px 10px 10px 41px;
         clip-path: polygon(0% 0, 100% 0%, 100% 42%, 100% 25%, 103% 99%, 92% 93%, 0% 92%);
-        margin: auto;
+        margin: 28% auto auto auto;
     }
     .map_info {
         height: 14vh;
-        background-color: yellow;
+        background-color: #ff0;
         width: 23vw;
-        margin: -9% auto auto auto;
+        margin: -34% auto auto;
+        text-align: right;
     }
 }
