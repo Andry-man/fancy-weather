@@ -1,4 +1,4 @@
-import { clock, date } from "../../js/idContentHtml/idContentHtml";
+import { clock, date, firstDay, secondDay, thirDay, select_lang } from "../../js/idContentHtml/idContentHtml";
 
 function funClock() {
     const time = new Date();
@@ -55,39 +55,39 @@ export function userDate(sel) {
         6: 'Суб',
     }
     const monEn = {
-        0: 'Dec',
-        1: 'Jan',
-        2: 'Feb',
-        3: 'Mar',
-        4: 'Apr',
-        5: 'May',
-        6: 'Jun',
-        7: 'Jul',
-        8: 'Aug',
-        9: 'Sep',
-        10: 'Oct',
-        11: 'Nov',
+        0: 'Jan',
+        1: 'Feb',
+        2: 'Mar',
+        3: 'Apr',
+        4: 'May',
+        5: 'Jun',
+        6: 'Jul',
+        7: 'Aug',
+        8: 'Sep',
+        9: 'Oct',
+        10: 'Nov',
+        11: 'Dec',
     }
     const monRu = {
-        0: 'Дек',
-        1: 'Янв',
-        2: 'Фев',
-        3: 'Мар',
-        4: 'Апр',
-        5: 'Май',
-        6: 'Июн',
-        7: 'Июл',
-        8: 'Авг',
-        9: 'Сен',
-        10: 'Окт',
-        11: 'Ноя',
+        0: 'Янв',
+        1: 'Фев',
+        2: 'Мар',
+        3: 'Апр',
+        4: 'Май',
+        5: 'Июн',
+        6: 'Июл',
+        7: 'Авг',
+        8: 'Сен',
+        9: 'Окт',
+        10: 'Ноя',
+        11: 'Дек',
     }
     const monBe = {
         0: 'Сту',
         1: 'Лют',
         2: 'Сак',
         3: 'Кра',
-        4: 'Тра',
+        4: 'Май',
         5: 'Чэр',
         6: 'Лiп',
         7: 'Жнi',
@@ -96,18 +96,23 @@ export function userDate(sel) {
         10: 'Лiс',
         11: 'Сне',
     }
-    if (localStorage.getItem('Lang') == 'RU') {
+    if (select_lang.value == 'RU') {
         selectorDay = dayRu;
         selectorMon = monRu;
     }
-    if (localStorage.getItem('Lang') == 'EN') {
+    if (select_lang.value == 'EN') {
         selectorDay = dayEn;
         selectorMon = monEn;
     }
-    if (localStorage.getItem('Lang') == 'BE') {
+    if (select_lang.value == 'BE') {
         selectorDay = dayBe;
         selectorMon = monBe;
     }
     date.innerText = `${selectorDay[dat.getDay()]}, ${dat.getDate()} ${selectorMon[dat.getMonth()]}`;
+    firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+    secondDay.innerHTML = `${selectorDay[dat.getDay() + 2]}`
+    thirDay.innerHTML = `${selectorDay[dat.getDay() + 3]}`
+
+
 }
-userDate(localStorage.getItem('Lang'))
+userDate(select_lang.value)

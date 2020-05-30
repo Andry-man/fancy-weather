@@ -29,9 +29,9 @@
                       </select>
 
                 </div>
-                <div class="button_temperature">
-                    <div class="button_one"> <span>°F</span></div>
-                    <div class="button_two"><span>°C</span></div>
+                <div class="button_temperature" id="block_button">
+                    <button class="button_one active" id="button_one">°F</button>
+                    <button class="button_two" id="button_two">°C</button>
                 </div>
             </div>
             <div class="container_search">
@@ -56,8 +56,33 @@
                         </span>
                     </div>
                 </div>
-                <div class="container_info_two">ГРАДУСЫ</div>
-                <div class="container_info_tree">ПОГОДА НА КАКОЕ ТО ВРЕМЯ</div>
+                <div class="container_info_two">
+                    <div class="info_two__one">
+                        <span class="temp" id="temp"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+                        <span class="sign" id="sign">°</span>
+                    </div>
+                    <img class="img_weather" id="img_weather" src="./assets/img/spinner.gif" alt="img">
+                    <div class="info_two__two">
+                        <span class="info_two__text_one" id="condition"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span> <br>
+                        <span class="info_two__text_two" id="feelslike"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span><br>
+                        <span class="info_two__text_three" id="gust"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span><br>
+                        <span class="info_two__text_four" id="humidity"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+                    </div>
+                </div>
+                <div class="container_info_tree">
+                    <div class="info_tree__one">
+                        <span id="firstDay">день</span>
+                        <span>погода</span>
+                    </div>
+                    <div class="info_tree__two">
+                        <span id="secondDay">день</span>
+                        <span>погода</span>
+                    </div>
+                    <div class="info_tree__tree">
+                        <span id="thirDay">день</span>
+                        <span>погода</span>
+                    </div>
+                </div>
             </div>
             <div class="container_map">
                 <div class="map" id="map"></div>
