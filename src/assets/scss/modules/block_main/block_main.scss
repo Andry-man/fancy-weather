@@ -18,6 +18,23 @@
     background-color: #00f;
     height: 13vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    .info_one__block_one {
+        width: 100%;
+        height: 50%;
+        background-color: hotpink;
+    }
+    .info_one__block_two {
+        width: 100%;
+        height: 50%;
+        background-color: lightblue;
+    }
+}
+
+.img_spinner {
+    height: auto;
+    width: 8%;
 }
 
 .container_info_two {
@@ -27,7 +44,7 @@
 }
 
 .container_info_tree {
-    background-color: black;
+    background-color: grey;
     height: 20vh;
     width: 100%;
 }

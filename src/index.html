@@ -22,7 +22,7 @@
                     <img class="img_reverse" src="./assets/img/reverse.svg" alt="img">
                 </div>
                 <div class="button_language">
-                    <select class="select_lang">
+                    <select class="select_lang" id="select_lang">
                         <option>EN</option>
                         <option>RU</option>
                         <option>BE</option>
@@ -36,7 +36,7 @@
             </div>
             <div class="container_search">
                 <form action="#" class="search_form">
-                    <input class="search_input" id="input_search" type="text" maxlength="26" placeholder="Search city">
+                    <input class="search_input" id="input_search" type="text" maxlength="26" autocomplete="off" placeholder="Search city">
                     <img class="img_micro" src="./assets/img/micro.png" alt="img">
                     <button class="button_search" id="button_search">Search</button>
                 </form>
@@ -45,9 +45,19 @@
 
         <main class="block_main">
             <div class="container_main_info">
-                <div class="container_info_one"></div>
-                <div class="container_info_two"></div>
-                <div class="container_info_tree"></div>
+                <div class="container_info_one">
+                    <div class="info_one__block_one" id="city">
+                        <img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img">
+                    </div>
+                    <div class="info_one__block_two">
+                        <span id="date"></span>
+                        <span id="clock">
+                            00:00:00
+                        </span>
+                    </div>
+                </div>
+                <div class="container_info_two">ГРАДУСЫ</div>
+                <div class="container_info_tree">ПОГОДА НА КАКОЕ ТО ВРЕМЯ</div>
             </div>
             <div class="container_map">
                 <div class="map" id="map"></div>
