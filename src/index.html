@@ -12,13 +12,13 @@
 
 </head>
 
-<body>
+<body id="body">
     <h1>fancy-weather</h1>
     <div class="wrapper">
         <div class="block_control">
             <div class="container_control">
-                <div class="button_refresh">
-                    <img class="img_refresh" src="./assets/img/controls_btn.png" alt="img">
+                <div class="button_refresh" id="button_refresh">
+                    <img class="img_refresh" id src="./assets/img/controls_btn.png" alt="img">
                     <img class="img_reverse" src="./assets/img/reverse.svg" alt="img">
                 </div>
                 <div class="button_language">
@@ -63,29 +63,51 @@
                     </div>
                     <img class="img_weather" id="img_weather" src="./assets/img/spinner.gif" alt="img">
                     <div class="info_two__two">
-                        <span class="info_two__text_one" id="condition"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span> <br>
-                        <span class="info_two__text_two" id="feelslike"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span><br>
-                        <span class="info_two__text_three" id="gust"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span><br>
-                        <span class="info_two__text_four" id="humidity"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+                        <span class="info_two__text_one" id="condition">
+                        <img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span> <br>
+                        <span class="info_two__text_two" id="feelslike">
+                        <span id="textOne">Apparent Temperature:</span>
+                        <span id="infoAT"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span> <br>
+                        <span class="info_two__text_three" id="gust">
+                        <span id="textTwo">Wind speed:</span>
+                        <span id="infoWS"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span><br>
+                        <span class="info_two__text_four" id="humidity">
+                        <span id="textTree">Humidity:</span>
+                        <span id="InfoH"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
                     </div>
                 </div>
                 <div class="container_info_tree">
                     <div class="info_tree__one">
                         <span id="firstDay">день</span>
-                        <span>погода</span>
+                        <span id="weather_one">погода</span>
+                        <span id="weather_one_img"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+
+                        <span id="temp_one">погода</span>
+
                     </div>
                     <div class="info_tree__two">
                         <span id="secondDay">день</span>
-                        <span>погода</span>
+                        <span id="weather_two">погода</span>
+                        <span id="weather_two_img"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+
+                        <span id="temp_two">погода</span>
+
                     </div>
                     <div class="info_tree__tree">
                         <span id="thirDay">день</span>
-                        <span>погода</span>
+                        <span id="weather_tree">погода</span>
+                        <span id="weather_tree_img"><img class="img_spinner" id="img_spinner_city" src="./assets/img/spinner.gif" alt="img"></span>
+
+                        <span id="temp_tree">погода</span>
+
                     </div>
                 </div>
             </div>
             <div class="container_map">
-                <div class="map" id="map"></div>
+                <img class="spinner" id="spinner" src="./assets/img/spinner.gif" alt="img">
+
+                <div class="map" id="map">
+                </div>
                 <div class="map_info">
                     Latitude:
                     <span class="info_one" id="latitude"></span><br> Longitude:

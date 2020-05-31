@@ -1,5 +1,5 @@
 import { maps } from "../logicAPP/logicAPP";
-import { latitude, longitude, zoom } from "../idContentHtml/idContentHtml";
+import { latitude, longitude, zoom, spinner } from "../idContentHtml/idContentHtml";
 
 const tet = [];
 export function positionUser(parm) {
@@ -12,6 +12,8 @@ export function positionUser(parm) {
         let mylong = position.coords.longitude;
         parm.push(mylong);
         parm.push(mylat)
+        spinner.className = 'spinner'
+
         maps(tet[0], tet[1], zoom.value);
         latitude.innerHTML = `${mylat}`;
         longitude.innerHTML = `${mylong}`;

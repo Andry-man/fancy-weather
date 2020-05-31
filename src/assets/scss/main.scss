@@ -20,15 +20,5 @@ body {
     font-family: 'Exo 2';
     background-image: url('../img/bg_img/bg_1.jpg');
     background-size: cover;
-    animation: clr 10s infinite;
     align-content: stretch;
-}
-
-@keyframes clr {
-    0% {
-        background-image: url('../img/bg_img/bg_3.jpg');
-    }
-    100% {
-        background-image: url('../img/bg_img/bg_4.jpg');
-    }
 }
