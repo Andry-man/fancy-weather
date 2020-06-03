@@ -1,5 +1,6 @@
 @import "modules/block_control/block_control";
 @import "modules/block_main/block_main";
+
 @import "modules/font";
 h1 {
     position: absolute;
@@ -15,6 +16,7 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+@import "modules/block_main/tablet/tablet";
 
 body {
     font-family: 'Exo 2';
