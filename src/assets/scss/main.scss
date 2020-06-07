@@ -1,15 +1,15 @@
 @import "modules/block_control/block_control";
 @import "modules/block_main/block_main";
 
+
 @import "modules/font";
 h1 {
     position: absolute;
     opacity: 0;
     z-index: -1;
 }
-
 .wrapper {
-    background-color: brown;
+    background-color: #2b2929b8;
     width: 87%;
     height: auto;
     margin: auto;
@@ -17,6 +17,7 @@ h1 {
     flex-direction: column;
 }
 @import "modules/block_main/tablet/tablet";
+@import "modules/block_main/mobile/mobile";
 
 body {
     font-family: 'Exo 2';

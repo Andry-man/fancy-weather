@@ -8,16 +8,15 @@
 }
 
 .block_main {
-    background-color: #e91e63;
     width: 100%;
     height: 89vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: white;
     .container_main_info {
-        background-color: #2e607b;
         height: auto;
-        width: 41%;
+        width: 51%;
         display: flex;
         flex-direction: column;
     }
@@ -65,15 +64,19 @@
     display: flex;
     flex-direction: row;
     .info_two__one {
-        background-color: blue;
         width: 50%;
         height: 100%;
+        background-color: #484848a6;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     }
     .info_two__two {
-        background-color: chocolate;
+        margin-left: 5%;
         width: 50%;
         height: 100%;
-        margin-left: 5%;
+        background-color: #484848a6;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     }
 }
 
@@ -98,19 +101,22 @@
 }
 
 .container_info_tree {
-    background-color: grey;
     height: 20vh;
     display: flex;
     flex-direction: row;
     width: 82%;
     position: absolute;
     margin-top: 64vh;
+    justify-content: space-around;
     .info_tree__one {
         display: flex;
         flex-direction: column;
-        background-color: coral;
         height: 100%;
         width: 20%;
+        justify-content: space-between;
+        background-color: #484848a6;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
         span {
             text-align: center;
         }
@@ -118,9 +124,12 @@
     .info_tree__two {
         display: flex;
         flex-direction: column;
-        background-color: cornflowerblue;
         height: 100%;
         width: 20%;
+        justify-content: space-between;
+        background-color: #484848a6;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
         span {
             text-align: center;
         }
@@ -128,9 +137,12 @@
     .info_tree__tree {
         display: flex;
         flex-direction: column;
-        background-color: crimson;
         height: 100%;
         width: 20%;
+        justify-content: space-between;
+        background-color: #484848a6;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
         span {
             text-align: center;
         }
@@ -138,18 +150,19 @@
 }
 
 .img_icon {
-    position: absolute;
+    position: relative;
 }
 
+;
 .container_map {
     display: flex;
     flex-direction: column;
-    background-color: #6e677b;
     height: auto;
-    width: 28%;
+    width: 32%;
     .controls {
+        width: calc(100vh - 70vh);
         position: relative;
-        margin: -22% auto 17%;
+        margin: -2vh auto 28vh;
     }
     .map {
         width: 85%;
@@ -160,9 +173,8 @@
     }
     .map_info {
         height: 14vh;
-        background-color: #ff0;
         width: 23vw;
-        margin: -34% auto auto;
-        text-align: right;
+        margin: 0;
+    text-align: left;
     }
 }

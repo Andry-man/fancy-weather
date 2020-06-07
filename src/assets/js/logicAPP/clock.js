@@ -110,8 +110,8 @@ export function userDate(sel) {
     }
     date.innerText = `${selectorDay[dat.getDay()]}, ${dat.getDate()} ${selectorMon[dat.getMonth()]}`;
     firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
-    secondDay.innerHTML = `${selectorDay[dat.getDay() + 2]}`
-    thirDay.innerHTML = `${selectorDay[dat.getDay() + 3]}`
+    secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
+    thirDay.innerHTML = `${selectorDay[dat.getDay() - 4]}`
 
 
 }

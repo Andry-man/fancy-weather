@@ -1,16 +1,16 @@
 .block_control {
     width: 100%;
     height: 11vh;
-    background-color: blueviolet;
+    background-color: #171717;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 8px 8px 8px 8px;
 }
 
 .container_search {
     width: 28%;
     height: auto;
-    background-color: red;
     .search_form {
         width: 100%;
         height: 100%;
@@ -34,15 +34,15 @@
         text-transform: none;
     }
     .img_micro {
-        width: 2.1vw;
-        position: absolute;
-        margin-left: -3%;
-        margin-top: 4px;
-        cursor: pointer;
+            width: 28px;
+    position: absolute;
+    margin-left: -32px;
+    margin-top: 4px;
+    cursor: pointer;
     }
     .button_search {
         border: none;
-        width: 6vw;
+        width: calc(100vw - 92%);
         height: 5.2vh;
         position: absolute;
         background-color: rgba(107, 119, 119, .61);
@@ -58,7 +58,6 @@
     justify-content: space-between;
     width: 34%;
     height: auto;
-    background-color: salmon;
     .button_refresh {
         height: min-content;
         width: 10%;
@@ -67,11 +66,11 @@
         cursor: pointer;
     }
     .img_reverse {
-        width: 1.5%;
-        position: absolute;
-        z-index: 4;
-        margin-top: 0.7%;
-        margin-left: -2.2%;
+       width: 18px;
+    position: absolute;
+    z-index: 4;
+    margin-top: -30px;
+    margin-left: 13px;
     }
     .button_language {
         height: auto;
@@ -118,7 +117,7 @@
 }
 
 .img_refresh {
-    width: 100%;
+    width:fit-content;
     background-color: #777777;
     border-radius: 10px 10px 10px 10px;
     cursor: pointer;
@@ -134,4 +133,7 @@
     option {
         background-color: #525252;
     }
+}
+.block_control_mobile{
+    display:none
 }

@@ -1,4 +1,4 @@
-import { input_search, body, button_refresh, button_search, latitude, longitude, city, select_lang, block_button, button_one, button_two, textOne, textTwo, textTree, weather_one, weather_two, weather_tree, spinner } from "../idContentHtml/idContentHtml";
+import { input_search, body, button_refresh, container_search, navbarToggleExternalContent, button_refresh_m, button_mobile_navbar, button_search, latitude, longitude, city, select_lang, select_lang_m, block_button, button_one, button_two, textOne, textTwo, textTree, weather_one, weather_two, weather_tree, spinner } from "../idContentHtml/idContentHtml";
 import { userDate } from "./clock";
 import { shoWeather, weatherapi, weather, weatherCel } from "../weather/weather";
 import { translate, translateTree, translatefour, translatefive, translatesix, translateSeven, translateeight, translateNine } from "../translate/translate";
@@ -23,6 +23,25 @@ select_lang.addEventListener('change', (event) => {
 select_lang.value = localStorage.getItem('Lang');
 if (localStorage.getItem('Lang') == null) {
     select_lang.value = 'EN'
+} else {
+    localStorage.setItem('defLang', localStorage.getItem('Lang'));
+}
+select_lang_m.addEventListener('change', (event) => {
+    localStorage.setItem('Lang', select_lang_m.value);
+    translate(localStorage.getItem('Lang'), condition.innerHTML);
+    translateTree(select_lang_m.value, city.innerHTML);
+    translatefour(select_lang_m.value);
+    translatefive(select_lang_m.value);
+    translatesix(select_lang_m.value);
+    translateSeven(localStorage.getItem('Lang'), weather_one.innerHTML);
+    translateeight(localStorage.getItem('Lang'), weather_two.innerHTML);
+    translateNine(localStorage.getItem('Lang'), weather_tree.innerHTML);
+    userDate();
+    localStorage.setItem('defLang', select_lang_m.value);
+})
+select_lang_m.value = localStorage.getItem('Lang');
+if (localStorage.getItem('Lang') == null) {
+    select_lang_m.value = 'EN'
 } else {
     localStorage.setItem('defLang', localStorage.getItem('Lang'));
 }
@@ -76,19 +95,19 @@ function searchBYCoordinatesCity(params) {
 // Start API MAP & zoom
 button_search.addEventListener('click', (event) => {
     if (input_search.value) {
-
         spinner.className = 'spinner';
         searchBYCoordinatesCity(`https://api.opencagedata.com/geocode/v1/json?q=${input_search.value}&key=${myKeyForOpencagedata}`);
         shoWeather(weatherapi, input_search.value)
+        city.innerHTML = input_search.value;
     }
 })
 window.addEventListener('keydown', (event) => {
-    if (input_search.value) {
-        if (event.code === 'Enter') {
-            spinner.className = 'spinner';
-            searchBYCoordinatesCity(`https://api.opencagedata.com/geocode/v1/json?q=${input_search.value}&key=${myKeyForOpencagedata}`);
-            shoWeather(weatherapi, input_search.value)
-        }
+    if (event.code === 'Enter') {
+        spinner.className = 'spinner';
+        searchBYCoordinatesCity(`https://api.opencagedata.com/geocode/v1/json?q=${input_search.value}&key=${myKeyForOpencagedata}`);
+        shoWeather(weatherapi, input_search.value)
+        city.innerHTML = input_search.value;
+
     }
 })
 
@@ -153,7 +172,23 @@ function getLinkToImage() {
         });
 
 }
-getLinkToImage()
+
 button_refresh.addEventListener('click', (event) => {
     getLinkToImage()
+})
+
+button_refresh_m.addEventListener('click', (event) => {
+    getLinkToImage()
+})
+getLinkToImage()
+
+button_mobile_navbar.addEventListener('click', (event) => {
+    console.log(navbarToggleExternalContent.className)
+    if (navbarToggleExternalContent.className === 'collapse') {
+        container_search.style.display = 'none';
+    }
+    if (navbarToggleExternalContent.className === 'collapse show') {
+        setTimeout(function() { container_search.style.display = 'block'; }, 480)
+
+    }
 })

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 </head>
@@ -34,12 +35,41 @@
                     <button class="button_two" id="button_two">°C</button>
                 </div>
             </div>
-            <div class="container_search">
+            <div class="container_search" id="container_search">
                 <form action="#" class="search_form">
-                    <input class="search_input" id="input_search" type="text" maxlength="26" autocomplete="off" placeholder="Search city">
+                    <input class="search_input" id="input_search" pattern="[A-Za-zА-Яа-яЁё]" type="text" maxlength="26" autocomplete="off" placeholder="Search city">
                     <img class="img_micro" src="./assets/img/micro.png" alt="img">
                     <button class="button_search" id="button_search">Search</button>
                 </form>
+            </div>
+            <div class="block_control_mobile">
+                <div class="pos-f-t">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                        <div class="bg-dark p-4">
+                            <div class="button_refresh" id="button_refresh_m">
+                                <img class="img_refresh" id src="./assets/img/controls_btn.png" alt="img">
+                                <img class="img_reverse" src="./assets/img/reverse.svg" alt="img">
+                            </div>
+                            <div class="button_language">
+                                <select class="select_lang" id="select_lang_m">
+                        <option>EN</option>
+                        <option>RU</option>
+                        <option>BE</option>
+                      </select>
+
+                            </div>
+                            <div class="button_temperature" id="block_button">
+                                <button class="button_one active" id="button_one">°F</button>
+                                <button class="button_two" id="button_two">°C</button>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="navbar navbar-dark bg-dark">
+                        <button class="navbar-toggler" id="button_mobile_navbar" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                    </nav>
+                </div>
             </div>
         </div>
 
@@ -120,7 +150,9 @@
         </main>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

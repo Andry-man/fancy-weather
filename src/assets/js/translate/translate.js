@@ -1,4 +1,4 @@
-import { select_lang, city, feelslike, textOne, textTwo, textTree, date, weather_one, weather_two } from "../idContentHtml/idContentHtml";
+import { select_lang,select_lang_m, city, feelslike, textOne, textTwo, textTree, date, weather_one, weather_two } from "../idContentHtml/idContentHtml";
 
 const translatAPI = 'trnsl.1.1.20200505T195708Z.211a8b83fbadf1ec.05cde44b1bf1f63a476934b41a12723899c55f83';
 const word = 'минск'
