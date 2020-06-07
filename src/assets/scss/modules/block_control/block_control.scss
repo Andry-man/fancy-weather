@@ -34,11 +34,11 @@
         text-transform: none;
     }
     .img_micro {
-            width: 28px;
-    position: absolute;
-    margin-left: -32px;
-    margin-top: 4px;
-    cursor: pointer;
+        width: 28px;
+        position: absolute;
+        margin-left: -32px;
+        margin-top: 4px;
+        cursor: pointer;
     }
     .button_search {
         border: none;
@@ -66,11 +66,11 @@
         cursor: pointer;
     }
     .img_reverse {
-       width: 18px;
-    position: absolute;
-    z-index: 4;
-    margin-top: -30px;
-    margin-left: 13px;
+        width: 18px;
+        position: absolute;
+        z-index: 4;
+        margin-top: -30px;
+        margin-left: 13px;
     }
     .button_language {
         height: auto;
@@ -113,11 +113,11 @@
 }
 
 .active {
-    background-color: #636262 !important;
+    background-color: #e20000!important;
 }
 
 .img_refresh {
-    width:fit-content;
+    width: fit-content;
     background-color: #777777;
     border-radius: 10px 10px 10px 10px;
     cursor: pointer;
@@ -134,6 +134,7 @@
         background-color: #525252;
     }
 }
-.block_control_mobile{
-    display:none
+
+.block_control_mobile {
+    display: none
 }

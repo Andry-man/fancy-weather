@@ -1,4 +1,4 @@
-import { input_search, body, button_refresh, container_search, navbarToggleExternalContent, button_refresh_m, button_mobile_navbar, button_search, latitude, longitude, city, select_lang, select_lang_m, block_button, button_one, button_two, textOne, textTwo, textTree, weather_one, weather_two, weather_tree, spinner } from "../idContentHtml/idContentHtml";
+import { input_search, body, button_refresh, block_button_m, button_one_m, button_two_m, container_search, navbarToggleExternalContent, button_refresh_m, button_mobile_navbar, button_search, latitude, longitude, city, select_lang, select_lang_m, block_button, button_one, button_two, textOne, textTwo, textTree, weather_one, weather_two, weather_tree, spinner } from "../idContentHtml/idContentHtml";
 import { userDate } from "./clock";
 import { shoWeather, weatherapi, weather, weatherCel } from "../weather/weather";
 import { translate, translateTree, translatefour, translatefive, translatesix, translateSeven, translateeight, translateNine } from "../translate/translate";
@@ -19,6 +19,7 @@ select_lang.addEventListener('change', (event) => {
     translateNine(localStorage.getItem('Lang'), weather_tree.innerHTML);
     userDate();
     localStorage.setItem('defLang', select_lang.value);
+    select_lang_m.value = select_lang.value;
 })
 select_lang.value = localStorage.getItem('Lang');
 if (localStorage.getItem('Lang') == null) {
@@ -26,6 +27,8 @@ if (localStorage.getItem('Lang') == null) {
 } else {
     localStorage.setItem('defLang', localStorage.getItem('Lang'));
 }
+
+
 select_lang_m.addEventListener('change', (event) => {
     localStorage.setItem('Lang', select_lang_m.value);
     translate(localStorage.getItem('Lang'), condition.innerHTML);
@@ -38,6 +41,7 @@ select_lang_m.addEventListener('change', (event) => {
     translateNine(localStorage.getItem('Lang'), weather_tree.innerHTML);
     userDate();
     localStorage.setItem('defLang', select_lang_m.value);
+    select_lang.value = select_lang_m.value;
 })
 select_lang_m.value = localStorage.getItem('Lang');
 if (localStorage.getItem('Lang') == null) {
@@ -45,6 +49,11 @@ if (localStorage.getItem('Lang') == null) {
 } else {
     localStorage.setItem('defLang', localStorage.getItem('Lang'));
 }
+
+
+
+
+
 
 
 
@@ -107,7 +116,7 @@ window.addEventListener('keydown', (event) => {
         searchBYCoordinatesCity(`https://api.opencagedata.com/geocode/v1/json?q=${input_search.value}&key=${myKeyForOpencagedata}`);
         shoWeather(weatherapi, input_search.value)
         city.innerHTML = input_search.value;
-
+        event.preventDefault()
     }
 })
 
@@ -133,33 +142,90 @@ showCity(ur.urlaGeo)
 function classNameBut() {
     button_one.classList = localStorage.getItem('temperature1');
     button_two.classList = localStorage.getItem('temperature2');
+    button_one_m.classList = localStorage.getItem('temperature1_m');
+    button_two_m.classList = localStorage.getItem('temperature2_m');
     if (button_one.classList[0] === 'null') {
         button_one.className = 'button_one'
+        button_one_m.className = 'button_one_m'
+
+    }
+    if (button_one_m.classList[0] === 'null') {
+        button_one_m.className = 'button_one_m'
+        button_one.className = 'button_one'
+
+
     }
     if (button_two.classList[0] === 'null') {
         button_two.className = 'button_two active'
+        button_two_m.className = 'button_two_m active'
+
+    }
+    if (button_two_m.classList[0] === 'null') {
+        button_two_m.className = 'button_two_m active'
+        button_two.className = 'button_two active'
+
     }
 }
+
 block_button.addEventListener('click', (event) => {
     if (event.target.id === 'button_one') {
         if (event.target.className != 'button_one active') {
             event.target.classList.add('active');
+            button_one_m.className = 'button_one_m active';
+
             button_two.className = 'button_two';
+            button_two_m.className = 'button_two_m';
+
             weather(weatherapi, city.innerHTML.slice(0, -3))
 
         }
     }
+
     if (event.target.id === 'button_two') {
         if (event.target.className != 'button_two active') {
             event.target.classList.add('active');
+            button_two_m.className = 'button_two active';
+
             button_one.className = 'button_one';
+            button_one_m.className = 'button_one_m';
             weatherCel(weatherapi, city.innerHTML.slice(0, -3))
 
         }
 
     }
     localStorage.setItem('temperature1', button_one.className);
+    localStorage.setItem('temperature1_m', localStorage.getItem('temperature1'));
     localStorage.setItem('temperature2', button_two.className);
+    localStorage.setItem('temperature2_m', localStorage.getItem('temperature2'));
+
+})
+block_button_m.addEventListener('click', (event) => {
+    if (event.target.id === 'button_one_m') {
+        if (event.target.className != 'button_one_m active') {
+            event.target.classList.add('active');
+            button_one.className = 'button_one active';
+            button_two_m.className = 'button_two_m';
+            button_two.className = 'button_two';
+            weather(weatherapi, city.innerHTML.slice(0, -3))
+
+        }
+    }
+    if (event.target.id === 'button_two_m') {
+        if (event.target.className != 'button_two_m active') {
+            event.target.classList.add('active');
+            button_two.className = 'button_two active';
+            button_one_m.className = 'button_one_m';
+            button_one.className = 'button_one';
+            weatherCel(weatherapi, city.innerHTML.slice(0, -3))
+
+        }
+
+    }
+    localStorage.setItem('temperature1_m', button_one_m.className);
+    localStorage.setItem('temperature1', localStorage.getItem('temperature1_m'));
+    localStorage.setItem('temperature2_m', button_two_m.className);
+    localStorage.setItem('temperature2', localStorage.getItem('temperature2_m'));
+
 })
 classNameBut()
 
@@ -183,7 +249,6 @@ button_refresh_m.addEventListener('click', (event) => {
 getLinkToImage()
 
 button_mobile_navbar.addEventListener('click', (event) => {
-    console.log(navbarToggleExternalContent.className)
     if (navbarToggleExternalContent.className === 'collapse') {
         container_search.style.display = 'none';
     }
