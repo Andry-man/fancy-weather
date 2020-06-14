@@ -30,7 +30,7 @@
             height: 42vh;
             border-radius: 10px 10px 10px 41px;
             clip-path: polygon(0 0, 100% 0, 100% 42%, 100% 25%, 103% 99%, 92% 93%, 0 92%);
-            margin: 20vh -20vh auto;
+            margin: 20vh -23vh auto;
         }
         .map_info {
             height: 10vh;
@@ -176,13 +176,6 @@
             padding-left: 6%;
             text-transform: none;
         }
-        .img_micro {
-            width: 28px;
-            position: absolute;
-            margin-left: -32px;
-            margin-top: 4px;
-            cursor: pointer;
-        }
         .button_search {
             border: none;
             width: auto;
@@ -193,6 +186,26 @@
             cursor: pointer;
             border-radius: 0 6px 6px 0;
         }
+    }
+}
+
+@media (max-height: 620px) {
+    .img_micro {
+        width: 19px !important;
+        position: absolute;
+        margin-left: -32px;
+        margin-top: 4px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .img_micro {
+        width: 28px;
+        position: absolute;
+        margin-left: -32px;
+        margin-top: 4px;
+        cursor: pointer;
     }
 }
 

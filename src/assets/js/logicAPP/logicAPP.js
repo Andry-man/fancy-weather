@@ -1,7 +1,7 @@
 import { input_search, body, button_refresh, block_button_m, button_one_m, button_two_m, container_search, navbarToggleExternalContent, button_refresh_m, button_mobile_navbar, button_search, latitude, longitude, city, select_lang, select_lang_m, block_button, button_one, button_two, textOne, textTwo, textTree, weather_one, weather_two, weather_tree, spinner } from "../idContentHtml/idContentHtml";
 import { userDate } from "./clock";
 import { shoWeather, weatherapi, weather, weatherCel } from "../weather/weather";
-import { translate, translateTree, translatefour, translatefive, translatesix, translateSeven, translateeight, translateNine } from "../translate/translate";
+import { translate, translateTree, translatefour, translatefive, translatesix, translateSeven, translateeight, translateBlockOne } from "../translate/translate";
 
 
 
@@ -14,15 +14,15 @@ select_lang.addEventListener('change', (event) => {
     translatefour(select_lang.value);
     translatefive(select_lang.value);
     translatesix(select_lang.value);
-    translateSeven(localStorage.getItem('Lang'), weather_one.innerHTML);
-    translateeight(localStorage.getItem('Lang'), weather_two.innerHTML);
-    translateNine(localStorage.getItem('Lang'), weather_tree.innerHTML);
+    translateBlockOne(localStorage.getItem('Lang'), weather_one.innerHTML, weather_one);
+    translateBlockOne(localStorage.getItem('Lang'), weather_two.innerHTML, weather_two);
+    translateBlockOne(localStorage.getItem('Lang'), weather_tree.innerHTML, weather_tree);
     userDate();
     localStorage.setItem('defLang', select_lang.value);
     select_lang_m.value = select_lang.value;
 })
 select_lang.value = localStorage.getItem('Lang');
-if (localStorage.getItem('Lang') == null) {
+if (localStorage.getItem('Lang') === null) {
     select_lang.value = 'EN'
 } else {
     localStorage.setItem('defLang', localStorage.getItem('Lang'));
@@ -57,7 +57,7 @@ if (localStorage.getItem('Lang') == null) {
 
 
 
-userDate()
+
 const myKeyForOpencagedata = '98e43136882a46fc85f4bb77ddb81387';
 const tokenGeo = '5c2c12654fbe54';
 const ur = {
@@ -136,7 +136,7 @@ function showCity(param) {
 
 
 }
-showCity(ur.urlaGeo)
+
 
 
 function classNameBut() {
@@ -227,7 +227,7 @@ block_button_m.addEventListener('click', (event) => {
     localStorage.setItem('temperature2', localStorage.getItem('temperature2_m'));
 
 })
-classNameBut()
+
 
 function getLinkToImage() {
     const url = 'https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=w9otNYZg2HE53FdqRc_avqMxt5p6i-ua0VvPgpiF7-k';
@@ -246,7 +246,7 @@ button_refresh.addEventListener('click', (event) => {
 button_refresh_m.addEventListener('click', (event) => {
     getLinkToImage()
 })
-getLinkToImage()
+
 
 button_mobile_navbar.addEventListener('click', (event) => {
     if (navbarToggleExternalContent.className === 'collapse') {
@@ -257,3 +257,7 @@ button_mobile_navbar.addEventListener('click', (event) => {
 
     }
 })
+userDate()
+getLinkToImage()
+classNameBut()
+showCity(ur.urlaGeo)

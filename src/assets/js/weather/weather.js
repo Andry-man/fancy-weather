@@ -1,5 +1,5 @@
 import { temp, sign, condition, feelslike, gust, humidity, img_weather, weather_one, weather_two, weather_tree, temp_one, temp_two, temp_tree, city, infoAT, infoWS, InfoH, textOne, textTwo, textTree, weather_one_img, weather_two_img, weather_tree_img, button_one, button_one_m, button_two, button_two_m } from "../idContentHtml/idContentHtml";
-import { translateTwo, translateTree, translatefour, translatefive, translatesix, translateSeven_ONE, translateeight_ONE, translateNine_ONE } from "../translate/translate";
+import { translateTwo, translateTree, translatefour, translatefive, translatesix, translateSeven_ONE, translateeight_ONE, translateBlock } from "../translate/translate";
 
 export const weatherapi = 'f4fbb14dfb2c48e383d155502203005';
 
@@ -32,13 +32,11 @@ export function shoWeather(weatherapi, citys) {
             translatefour(select_lang.value);
             translatefive(select_lang.value);
             translatesix(select_lang.value);
-            translateSeven_ONE(select_lang.value, weather_one.innerHTML)
-            translateeight_ONE(select_lang.value, weather_two.innerHTML)
-            translateNine_ONE(select_lang.value, weather_tree.innerHTML)
+            translateBlock(select_lang.value, weather_tree.innerHTML, weather_tree)
+            translateBlock(select_lang.value, weather_one.innerHTML, weather_one)
+            translateBlock(select_lang.value, weather_two.innerHTML, weather_two)
         })
 }
-shoWeather(weatherapi, cit)
-
 
 export function weather(weatherapi, citys) {
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${weatherapi}&q=${citys}&days=3`;
@@ -77,3 +75,4 @@ function startTemp() {
     }
 }
 setTimeout(startTemp, 1000)
+shoWeather(weatherapi, cit)

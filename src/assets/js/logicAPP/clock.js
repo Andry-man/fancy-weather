@@ -109,10 +109,39 @@ export function userDate(sel) {
         selectorMon = monBe;
     }
     date.innerText = `${selectorDay[dat.getDay()]}, ${dat.getDate()} ${selectorMon[dat.getMonth()]}`;
-    firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
-    secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
-    thirDay.innerHTML = `${selectorDay[dat.getDay() - 4]}`
-
-
+    if (dat.getDay() === 4) {
+        thirDay.innerHTML = `${selectorDay[0]}`
+        firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+        secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
+    } else {
+        firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+        secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
+        thirDay.innerHTML = `${selectorDay[dat.getDay() + 3]}`
+    }
+    if (dat.getDay() === 5) {
+        firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+        secondDay.innerHTML = `${selectorDay[0]}`
+        thirDay.innerHTML = `${selectorDay[1]}`
+    } else {
+        firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+        secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
+        thirDay.innerHTML = `${selectorDay[dat.getDay() +3]}`
+    }
+    if (dat.getDay() === 6) {
+        firstDay.innerHTML = `${selectorDay[0]}`
+        secondDay.innerHTML = `${selectorDay[1]}`
+        thirDay.innerHTML = `${selectorDay[2]}`
+    } else {
+        firstDay.innerHTML = `${selectorDay[dat.getDay() + 1]}`
+        secondDay.innerHTML = `${selectorDay[dat.getDay() +2]}`
+        thirDay.innerHTML = `${selectorDay[dat.getDay() + 3]}`
+    }
+    //length
 }
 userDate(select_lang.value)
+
+// function dat(num) {
+// let arr = [0,1,2,3,4,5,6]
+// let dates = arr[5]
+// if (num)
+// }
